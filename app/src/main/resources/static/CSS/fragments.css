@@ -1,0 +1,38 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+}
+.header_div_container{
+	color: black;
+	height: 10vh;
+	background-color: #d480bc;
+	display: flex;
+	justify-content: space-between;
+	padding: 0 1em;
+}
+.menu_div_container,.menu_div_container a{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.menu_div_container a{
+	padding: 0 1em;
+	height: 100%;
+	text-decoration: none;
+	color: white;
+}
+
+.menu_div_container a:hover{
+	background-color: white;
+	color: black;
+}
+
+.logo_div_container{
+	font-size: 2em;
+	color: white;
+	font-weight: bold;
+	font-style: italic;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

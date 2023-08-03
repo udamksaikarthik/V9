@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+	<meta charset="ISO-8859-1">
+    <title>Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link th:href="@{/CSS/fragments.css}" rel="stylesheet" >
+    <link th:href="@{/CSS/loginPage.css}" rel="stylesheet" >
+  </head>
+  <body>
+  	
+	<div th:replace = "~{fragments.html :: header}">
+		
+	</div>
+	
+	<div class="Login_Container">
+		<div class="Login_Header login_component">
+			<div class="login_image skeleton"></div>
+			<h2>Login</h2>
+		</div>
+		<div class="Login_Form_Container login_component">
+			<h4 th:if="${param.error}" class="error_message_field_display">Invalid Username and Password!</h4>
+			<h4 th:if="${param.logout}" class="success_message">You Have Been Logged Out!</h4>
+			<span th:text="${no_error_message}" th:class="${success_display_flag}?success_message:success_message_no_display"></span>	
+		<form th:action="@{/login}" method="post">
+			<table>
+				<tr><h4>
+					<td>Username:</td> 
+					<td><input type="text" name="username" placeholder="username" autocomplete="OFF"></td> 
+				</h4></tr>
+				<tr><h4>
+					<td>Password:</td> 
+					<td><input type="password" name="password" placeholder="password" autocomplete="OFF"></td> 
+				</h4></tr>
+			</table>
+		</div>
+		<div class="Buttons login_component">
+			<button class="button login_button" type="submit">Login</button>
+			<button class="button signup_button">
+			SignUp
+			<a th:href="@{/signupPage}"></a>
+			</button>
+		</div>
+		</form>
+	</div>
+  
+  </body>
+
+</html>
